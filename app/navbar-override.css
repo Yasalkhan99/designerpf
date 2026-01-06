@@ -1,0 +1,29 @@
+/* Override any revox text in navbar */
+.offcanvas__logo::before,
+.offcanvas__logo::after,
+.header-logo::before,
+.header-logo::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Hide the revox logo SVG completely */
+.offcanvas__logo img,
+.header-logo img,
+.footer-logo img {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Ensure HN DESIGNS text is visible */
+.offcanvas__logo span,
+.header-logo span,
+.footer-logo span {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+

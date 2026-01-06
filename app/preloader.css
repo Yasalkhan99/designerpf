@@ -1,0 +1,159 @@
+/* Enhanced Preloader Styles for HN DESIGNS */
+.preloader {
+  position: fixed;
+  z-index: 99999999999999;
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.preloader svg {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 110vh;
+  fill: #111013;
+}
+
+h5.preloader-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: calc(70px + 5vw);
+  color: #1a1a1a;
+  font-weight: 800;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  font-family: inherit;
+  z-index: 10;
+  white-space: nowrap;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
+}
+
+@media (max-width: 1200px) {
+  h5.preloader-text {
+    font-size: calc(50px + 4vw);
+    letter-spacing: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  h5.preloader-text {
+    font-size: calc(35px + 3vw);
+    letter-spacing: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  h5.preloader-text {
+    font-size: calc(28px + 2vw);
+    letter-spacing: 5px;
+  }
+}
+
+/* Animated overlay effect */
+h5.preloader-text::after {
+  content: "HN DESIGNS";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--theme, #BFF747);
+  font-weight: 800;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  animation: revealText 2.5s ease-in-out infinite;
+  z-index: 1;
+}
+
+@media (max-width: 1200px) {
+  h5.preloader-text::after {
+    letter-spacing: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  h5.preloader-text::after {
+    letter-spacing: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  h5.preloader-text::after {
+    letter-spacing: 5px;
+  }
+}
+
+@keyframes revealText {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0.8;
+  }
+  50% {
+    clip-path: inset(0 0% 0 0);
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 0% 0 100%);
+    opacity: 0.8;
+  }
+}
+
+/* Subtle glow effect */
+h5.preloader-text::before {
+  content: "HN DESIGNS";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  color: transparent;
+  text-shadow: 
+    0 0 40px rgba(191, 247, 71, 0.4),
+    0 0 80px rgba(191, 247, 71, 0.2);
+  z-index: -1;
+  font-weight: 800;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  animation: glowPulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+  h5.preloader-text::before {
+    letter-spacing: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  h5.preloader-text::before {
+    letter-spacing: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  h5.preloader-text::before {
+    letter-spacing: 5px;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
